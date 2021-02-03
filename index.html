@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ai / Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body id="body">
+<div class="main">
+    <h1>Tic Tac Toe</h1>
+    <div id="game">
+        <div class="mask">
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+    <div class="loading-pnl">
+        <div class="loading" id="loading">
+            <span id="loading1"></span>
+            <span id="loading2"></span>
+            <span id="loading3"></span>
+        </div>
+    </div>
+    <div id="output"></div>
+    <div id="controls">
+        <button id="play">Play</button>
+        <div>
+            <label>
+                <input type="checkbox" class="checkbox" id="useAi" checked />
+                Use AI
+            </label>
+            <label>
+                <input type="checkbox" class="checkbox" id="firstMove" checked />
+                First move
+            </label>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
