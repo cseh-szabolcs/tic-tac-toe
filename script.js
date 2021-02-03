@@ -1,16 +1,14 @@
-
-
 /**
- * API
+ * Constants for players.
  */
-
 var Players = {
   user: 'X',
   ai: 'O'
 };
 
-
-
+/**
+ * Contains the game-state.
+ */
 var Game = {
   useAi: true,
   running: false,
@@ -102,7 +100,9 @@ var Game = {
   }
 };
 
-
+/**
+ * Representation of the AI.
+ */
 var Ai = {
   thinkingTime: {
     min: 600,
@@ -128,7 +128,9 @@ var Ai = {
   }
 };
 
-
+/**
+ * Contains all algorithms which are used by AI.
+ */
 var Engine = {
   findBestMove: function() {
     if (!Game.useAi) {
@@ -207,8 +209,9 @@ var Engine = {
   }
 };
 
-
-
+/**
+ * View-renderer.
+ */
 var View = {
   cells: null,
   output: null,
@@ -283,12 +286,9 @@ var View = {
   }
 };
 
-
-
 /**
- * DOM
+ * Initializes the View and listens to all events on the DOM.
  */
-
 (function () {
   View.cells = document.querySelectorAll(".cell");
   View.output = document.getElementById("output");

@@ -21,7 +21,7 @@ body {
     align-items: center;
 }
 h1 {
-    margin-bottom: 60px;
+    margin-bottom: 15px;
     font-size: 4rem;
     color: #8a8eb9;
 }
@@ -118,7 +118,12 @@ label {
     margin-bottom: 20px;
     height: 40px;
 }
-
+.github {
+    color: #8a8eb9;
+    font-size: 0.8rem;
+    display: block;
+    margin: 30px;
+}
 
 /** loading-bar */
 .loading-pnl {
