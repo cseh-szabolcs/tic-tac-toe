@@ -7,7 +7,7 @@ var Players = {
 };
 
 /**
- * Contains the game-state.
+ * Manages the game-state.
  */
 var Game = {
   useAi: true,
