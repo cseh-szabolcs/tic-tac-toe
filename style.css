@@ -16,17 +16,26 @@ body, html {
 }
 body {
     font-family:  'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
-    min-height: 480px;
+    background: #efefef;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .main {
-    width: 460px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 420px;
+    padding: 30px 0;
+    background: white;
+    box-shadow: 0 0 4px -1px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+@media screen and (min-width: 680px) {
+    .main {
+        width: 680px;
+    }
 }
 h1 {
     margin-bottom: 5px;
@@ -95,20 +104,19 @@ button {
     background-color: #8a8eb9;
     border: none;
     border-radius: 5px;
-    display: inline-block;
+    display: block;
     cursor: pointer;
     color: #ffffff;
     font-weight: bold;
     padding: 10px 60px;
     text-decoration: none;
-    text-shadow: 0px -1px 0px #2b665e;
+    text-shadow: 0 -1px 0 #2b665e;
     font-size: 2rem;
+    margin-bottom: 15px;
 }
 label {
     display: block;
     color: #8a8eb9;
-    position: relative;
-    top: 15px;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -122,14 +130,16 @@ label {
 #output {
     text-align: center;
     font-size: 1.5rem;
-    color: #747474;
+    color: #b3b3b3;
     height: 45px;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
 }
 .github {
     color: #8a8eb9;
     font-size: 0.8rem;
-    display: block;
-    margin: 30px;
 }
 
 /** loading-bar */

@@ -223,7 +223,7 @@ var View = {
     switch (event) {
       case 'start':
         this.controls.style.visibility = 'hidden';
-        this.output.style.color = '#747474';
+        this.output.style.color = '#b3b3b3';
         this.output.innerText = '';
         this.drawResultLine({});
         this.cells.forEach(function(cell) {
