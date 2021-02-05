@@ -143,7 +143,7 @@ var Engine = {
     
     this.findFreeCell(function(point) {
       Game.set(point, Players.ai);
-      var score = self.minimax(false);
+      var score = self.minimax(false, -Infinity, Infinity);
       Game.undo(point);
       if (score > bestScore) {
         bestScore = score;
@@ -160,7 +160,10 @@ var Engine = {
           var point = {x:x, y:y};
           cells.push(point);
           if (mode && mode.constructor == Function) {
-            mode(point);
+            var res = mode(point);
+            if (res) {
+              break;
+            }
           }
         }
       }
@@ -172,7 +175,7 @@ var Engine = {
     }
     return null;
   },
-  minimax: function(isMaximizing) {
+  minimax: function(isMaximizing, alpha, beta) {
     var result = Game.checkWinner();
     if (result) {
       switch (result.winner) {
@@ -191,9 +194,13 @@ var Engine = {
       bestScore = -Infinity;
       this.findFreeCell(function(point) {
         Game.set(point, Players.ai);
-        var score = self.minimax(false);
-        Game.undo(point);
+        var score = self.minimax(false, alpha, beta);
         bestScore = Math.max(score, bestScore);
+        alpha = Math.max(alpha, score);
+        Game.undo(point);
+        if (beta <= alpha) {
+          return true
+        }
       });
       return bestScore;
     }
@@ -201,9 +208,13 @@ var Engine = {
     bestScore = Infinity;
     this.findFreeCell(function(point) {
       Game.set(point, Players.user);
-      var score = self.minimax(true);
-      Game.undo(point);
+      var score = self.minimax(true, alpha, beta);
       bestScore = Math.min(score, bestScore);
+      beta = Math.min(beta, score);
+      Game.undo(point);
+      if (beta <= alpha) {
+        return true;
+      }
     });
     return bestScore;
   }
