@@ -105,7 +105,7 @@ var Game = {
  */
 var Ai = {
   thinkingTime: {
-    min: 600,
+    min: 300,
     max: 1200
   },
   simulateClick: function() {
